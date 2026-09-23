@@ -1,11 +1,11 @@
 package com.necthar.expensecontrol.model;
 
 public enum Category {
-    ALIMENTACAO,
-    TRANSPORTE,
-    MORADIA,
-    SAUDE,
-    LAZER,
-    EDUCACAO,
-    OUTROS
+    Alimentacao,
+    Transporte,
+    Moradia,
+    Saude,
+    Lazer,
+    Educacao,
+    Outros
 }
