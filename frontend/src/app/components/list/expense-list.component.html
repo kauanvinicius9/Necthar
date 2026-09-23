@@ -1,27 +1,32 @@
 <div class="list">
   <h2>Despesas</h2>
 
-  <p class="empty" *ngIf="expense.length === 0">Nenhuma despesa cadastrada ainda</p>
-
-  <table *ngIf="expense.length > 0">
-    <thead>
-      <tr>
-        <th>Descrição</th>
-        <th>Categoria</th>
-        <th>Data</th>
-        <th>Valor</th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let d of expenses">
-        <td>{{ d.description }}</td>
-        <td><span class="tag">{{ d.category }}</span></td>
-        <td>{{ d.date }}</td>
-        <td>R$ {{ d.value.toFixed(2) }}</td>
-        <td><button class="delete" (click)="delete(d.id)">Remover</button></td>
-      </tr>
-    </tbody>
-  </table>
+  @if (expenses().length === 0) {
+  <p class="empty">Nenhuma despesa cadastrada ainda</p>
+  } 
+  @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Categoria</th>
+          <th>Data</th>
+          <th>Valor</th>
+          <th></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        @for (d of expenses(); track d.id) {
+          <tr>
+            <td>{{ d.description }}</td>
+            <td><span class="tag">{{ d.category }}</span></td>
+            <td>{{ d.date }}</td>
+            <td>R$ {{ d.value.toFixed(2) }}</td>
+            <td><button class="delete" (click)="delete(d.id)">Remover</button></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
 </div>

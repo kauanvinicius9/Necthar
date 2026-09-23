@@ -34,9 +34,13 @@ label {
 
 input, select {
   padding: 8px 10px;
-  border: 1px solid #d1d5db;
+  border: 2px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {
