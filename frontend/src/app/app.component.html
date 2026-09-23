@@ -1,0 +1,15 @@
+<div class="page">
+  <header>
+    <h1>Controle de Gastos</h1>
+    <div class="resume" *ngIf="resume">
+      Total gasto: <strong>R$ {{ resume.total.toFixed(2) }}</strong>
+    </div>
+  </header>
+
+  <p class="alert" *ngIf="conectionError">Nao foi possivel conectar a API></p>
+
+  <main>
+    <app-expense-form (expenseCreated)="loadData()"></app-expense-form>
+    <app-expense-list [expenses]="expenses" (deletedExpense)="loadData()"></app-expense-list>
+  </main>
+</div>
