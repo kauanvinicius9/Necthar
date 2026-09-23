@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Expense, ExpenseResume } from "./models/expense.model";
 import { ExpenseService } from "./services/expense.service";
@@ -13,35 +13,43 @@ import { ExpenseListComponent } from "./components/list/expense-list.component";
   styleUrl: "./app.component.css"
 })
 export class AppComponent implements OnInit {
-  expenses: Expense[] = [];
-  resume: ExpenseResume| null = null;
-  loading = true;
-  conectionError = false;
+  readonly expenses = signal<Expense[]>([]);
+  readonly resume = signal<ExpenseResume| null>(null);
+  readonly loading = signal<boolean>(true);
+  readonly conectionError = signal<boolean>(false);
 
-  constructor(private expenseService: ExpenseService) {}
+  constructor(
+    private expenseService: ExpenseService
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadData();
   }
 
-  loadData() {
-    this.loading = true;
-    this.conectionError = false;
+  loadData(): void {
+    this.loading.set(true);
+    this.conectionError.set(false);
 
     this.expenseService.list().subscribe({
       next: (data) => {
-        this.expenses = data;
-        this.loading = false;
+        this.expenses.set(data);
+        this.loading.set(false);
       },
-      error: () => {
-        this.loading = false;
-        this.conectionError = true;
+
+      error: (error: any) => {
+        this.loading.set(false);
+        this.conectionError.set(true);
+        console.error("Erro ao conectar à API", error);
+
+        setTimeout(() => {
+          this.conectionError.set(false);
+        }, 4000);
       }
     });
 
     this.expenseService.resume().subscribe({
-      next: (r) => (this.resume = r),
-      error: () => {}
+      next: (r) => this.resume.set(r),
+      error: (err) => console.error("Erro ao carregar resumo", err)
     });
   }
 }

@@ -12,9 +12,9 @@
     </parent>
 
     <groupId>com.exemplo</groupId>
-    <artifactId>controle-gastos</artifactId>
+    <artifactId>necthar</artifactId>
     <version>1.0.0</version>
-    <name>controle-gastos</name>
+    <name>necthar</name>
     <description>API de controle de gastos pessoais com banco H2 local</description>
 
     <properties>
