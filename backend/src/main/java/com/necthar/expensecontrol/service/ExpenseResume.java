@@ -1,16 +1,16 @@
-package com.exemplo.controlegastos.service;
+package com.necthar.expensecontrol.service;
 
 import java.util.Map;
 
-public class ResumoGastos {
+public class ExpenseResume {
     private final double total;
-    private final Map<String, Double> totalPorCategoria;
+    private final Map<String, Double> totalPerCategory;
 
-    public ResumoGastos(double total, Map<String, Double> totalPorCategoria) {
+    public ExpenseResume(double total, Map<String, Double> totalPerCategory) {
         this.total = total;
-        this.totalPorCategoria = totalPorCategoria;
+        this.totalPerCategory = totalPerCategory;
     }
 
     public double getTotal() { return total; }
-    public Map<String, Double> getTotalPorCategoria() { return totalPorCategoria; }
+    public Map<String, Double> getTotalPerCategory() { return totalPerCategory; }
 }
