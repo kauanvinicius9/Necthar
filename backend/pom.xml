@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.exemplo</groupId>
+    <groupId>com.necthar</groupId>
     <artifactId>necthar</artifactId>
     <version>1.0.0</version>
     <name>necthar</name>
