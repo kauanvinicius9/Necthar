@@ -21,6 +21,7 @@
   <div class="area">
     <label for="category">Categoria</label>
     <select id="category" name="category" [(ngModel)]="newExpense().category">
+      
       @for (c of categories(); track c) {
         <option [value]="c">{{ c }}</option>
       }
