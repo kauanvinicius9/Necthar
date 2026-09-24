@@ -9,7 +9,8 @@
   <div class="line">
     <div class="area">
       <label for="value">Valor R$</label>
-        <input id="value" type="number" name="value" min="0.01" step="0.01" [(ngModel)]="newExpense().value">
+        <input id="value" type="text" inputMode="numeric" name="displayValue" min="0.01" step="0.01" [(ngModel)]="newExpense().value" 
+                      [value]="displayValue()" (input)="onValueInput($event)" placeholder="R$ 0,00">
     </div>
 
     <div class="area">
