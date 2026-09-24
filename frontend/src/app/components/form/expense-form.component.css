@@ -43,6 +43,10 @@ input:focus {
   outline: none;
 }
 
+input:hover {
+  background: #edebeb;
+}
+
 button {
   background: #2563eb;
   color: white;
