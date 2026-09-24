@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   readonly expenses = signal<Expense[]>([]);
   readonly resume = signal<ExpenseResume| null>(null);
   readonly loading = signal<boolean>(true);
-  readonly conectionError = signal<boolean>(false);
+  readonly connectionError = signal<boolean>(false);
 
   constructor(
     private expenseService: ExpenseService
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
   loadData(): void {
     this.loading.set(true);
-    this.conectionError.set(false);
+    this.connectionError.set(false);
 
     this.expenseService.list().subscribe({
       next: (data) => {
@@ -38,11 +38,11 @@ export class AppComponent implements OnInit {
 
       error: (error: any) => {
         this.loading.set(false);
-        this.conectionError.set(true);
+        this.connectionError.set(true);
         console.error("Erro ao conectar à API", error);
 
         setTimeout(() => {
-          this.conectionError.set(false);
+          this.connectionError.set(false);
         }, 4000);
       }
     });
