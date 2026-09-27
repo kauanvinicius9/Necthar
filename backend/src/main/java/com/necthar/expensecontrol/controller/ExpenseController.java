@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/expense")
+@CrossOrigin (origins = "*")
 public class ExpenseController {
 
     private final ExpenseService service;
@@ -27,14 +28,14 @@ public class ExpenseController {
         return service.listAll();
     }
 
-    @GetMapping("/{id}")
-    public Expense get(@PathVariable Long id) {
-        return service.getById(id);
-    }
-
-    @GetMapping("/resume")
+    @GetMapping("/resume/")
     public ExpenseResume resume() {
         return service.generateResume();
+    }
+
+    @GetMapping("/{id}")
+    public Expense get(@PathVariable Long id) {
+        return service.findById(id);
     }
 
     @PostMapping

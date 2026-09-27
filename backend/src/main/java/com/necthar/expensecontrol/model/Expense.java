@@ -21,7 +21,7 @@ public class Expense {
 
     @NotNull(message = "O valor é obrigatório")
     @Positive(message = "O valor deve ser maior que zero")
-    @Column(nullable = false)
+    @Column(name = "amount", nullable = false)
     private Double value;
 
     @NotNull(message = "A categoria é obrigatória")

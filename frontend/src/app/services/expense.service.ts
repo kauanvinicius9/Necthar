@@ -5,7 +5,7 @@ import { Expense, ExpenseResume } from "../models/expense.model";
 
 @Injectable({ providedIn: "root" })
 export class ExpenseService {
-  private readonly baseUrl = "http://localhost:8080/api/expenses";
+  private readonly baseUrl = "http://localhost:8081/api/expense";
 
   constructor(private http: HttpClient) {}
 
