@@ -13,4 +13,4 @@ export interface ExpenseResume {
   totalPerCategory: Record<string, number>;
 }
 
-export const Categories: Category[] = [ "Alimentação", "Transporte", "Moradia", "Saúde", "Lazer", "Educação", "Outros"];
+export const Categories: Category[] = [ "Alimentação", "Transporte", "Moradia", "Saúde", "Lazer", "Educação", "Outros" ];
