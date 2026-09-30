@@ -12,6 +12,7 @@ import { ExpenseListComponent } from "./components/list/expense-list.component";
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css"
 })
+  
 export class AppComponent implements OnInit {
   readonly expenses = signal<Expense[]>([]);
   readonly resume = signal<ExpenseResume| null>(null);
