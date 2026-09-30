@@ -73,6 +73,7 @@ export class ExpenseFormComponent {
         this.expenseCreated.emit();
         this.resetForm();
       },
+      
       error: (error: any) => {
         this.setError("Não foi possivel salvar a despesa");
       }
@@ -87,13 +88,7 @@ export class ExpenseFormComponent {
   }
 
   private resetForm(): void {
-    this.newExpense.set({
-      description: "",
-      value: 0,
-      category: "Outros",
-      date: new Date().toISOString().substring(0, 10)
-    });
-    
+    this.newExpense.set({ description: "", value: 0, category: "Outros", date: new Date().toISOString().substring(0, 10)});
     this.displayValue.set("R$ 0,00");
   }
 }
