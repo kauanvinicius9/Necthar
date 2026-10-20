@@ -1,73 +1,12 @@
-# Necthar Project Documentation
+## Necthar Project Documentation
 
-## 1. Overview
+## Overview
 
 **Necthar** is an **Expense Control** (*Expense Control*) application. The project is structured on a full-stack architecture composed of a robust backend in **Java with Spring Boot** and a modern reactive frontend in **Angular**. The system stores your data in a **H2 Database** and provides features for registering, viewing, filtering and generating expense summaries.
 
 ---
 
-## 2. Project Structure
-
-```text
-Necthar-main/
-├── README.md
-├── .gitignore
-├── backend/
-│ ├── pom.xml
-│ ├── date/
-│ │ └── expense.mv.db
-│ └── src/
-│ └── main/
-│ ├── java/com/necthar/expensecontrol/
-│ │ ├── ExpenseControlApplication.java
-│ │ ├── config/
-│ │ │ └── CorsConfig.java
-│ │ ├── controller/
-│ │ │ ├── ErrorHandler.java
-│ │ │ └── ExpenseController.java
-│ │ ├── model/
-│ │ │ ├── Category.java
-│ │ │ └── Expense.java
-│ │ ├── repository/
-│ │ │ └── ExpenseRepository.java
-│ │ └── service/
-│ │ ├── ExpenseResume.java
-│ │ └── ExpenseService.java
-│ └── resources/
-│ └── application.properties
-└── frontend/
-    ├── angular.json
-    ├── package.json
-    ├── package-lock.json
-    ├── tsconfig.json
-    ├── tsconfig.app.json
-    └── src/
-        ├── index.html
-        ├── main.ts
-        ├── styles.css
-        └── app/
-            ├── app.component.ts
-            ├── app.component.html
-            ├── app.component.css
-            ├── app.config.ts
-            ├── components/
-            │ ├── form/
-            │ │ ├── expense-form.component.ts
-            │ │ ├── expense-form.component.html
-            │ │ └── expense-form.component.css
-            │ └── list/
-            │ ├── expense-list.component.ts
-            │ ├── expense-list.component.html
-            │ └── expense-list.component.css
-            ├── models/
-            │ └── expense.model.ts
-            └── services/
-                └── expense.service.ts
-```
-
----
-
-## 3. Backend Components (Spring Boot)
+## Backend Components (Spring Boot)
 
 * **`ExpenseControlApplication.java`**: Main class responsible for initializing the Spring Boot ecosystem.
 * **`config/CorsConfig.java`**: CORS configuration to allow HTTP requests from the Angular client.
@@ -83,7 +22,7 @@ Necthar-main/
 
 ---
 
-## 4. Frontend Components (Angular)
+## Frontend Components (Angular)
 
 * **`models/expense.model.ts`**: TypeScript interfaces and types that mirror the expense structure of the backend API.
 * **`services/expense.service.ts`**: Service responsible for making HTTP calls via `HttpClient` to the backend API endpoints.
@@ -92,7 +31,7 @@ Necthar-main/
 
 ---
 
-## 5. How to Execute the Project
+## How to Execute the Project
 
 ### Prerequisites
 
